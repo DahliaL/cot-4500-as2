@@ -1,5 +1,4 @@
 import numpy as np
-from decimal import *
 
 def nevilles_method(x_points, y_points, x):
     matrix = np.zeros((3, 3))
@@ -43,7 +42,7 @@ def divided_difference_table(x_points, y_points):
             matrix[i][j] = '{0:.7g}'.format(operation)
     
     
-    print(f'[{Decimal(matrix[1][1])}, {Decimal(matrix[2][2])}, {Decimal(matrix[3][3])}]', end = '\n\n')
+    print(f'[{(matrix[1][1])}, {(matrix[2][2])}, {(matrix[3][3])}]', end = '\n\n')
     return matrix
 
 

@@ -84,7 +84,7 @@ def apply_div_dif(matrix: np.array):
             # order of numerator is SPECIFIC.
             numerator: float = left - diagonal_left
             # denominator is current i's x_val minus the starting i's x_val....
-            denominator = matrix[i][0] - matrix[i-j][0]
+            denominator = matrix[i][0] - matrix[i-j+1][0]
             # something save into matrix
             operation = numerator / denominator
             matrix[i][j] = operation
@@ -109,7 +109,7 @@ def hermite_interpolation():
         
     # prepopulate with derivates (make sure to fill every TWO rows. starting row CHANGES.)
     for x in range(num_of_points):
-        matrix[2*x+1][1] = slopes[x]
+        matrix[2*x+1][2] = slopes[x]
         
     filled_matrix = apply_div_dif(matrix)
     print(filled_matrix, end='\n\n')
